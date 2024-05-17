@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://8xcjocy3rr7l"]
+
+[ext_resource type="PackedScene" uid="uid://bw2rbvlgd2r8c" path="res://scene/main_car.tscn" id="1_t3hi5"]
+
+[sub_resource type="Sky" id="Sky_wuvd6"]
+
+[sub_resource type="Environment" id="Environment_dfndc"]
+background_mode = 2
+sky = SubResource("Sky_wuvd6")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MainCar" parent="." instance=ExtResource("1_t3hi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 16)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dfndc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.661233, 0.75018, 0, -0.75018, 0.661233, 0, 19.1666, 0)
+light_energy = 4.125

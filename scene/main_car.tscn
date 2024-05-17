@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw2rbvlgd2r8c"]
+[gd_scene load_steps=2 format=3 uid="uid://bw2rbvlgd2r8c"]
 
 [ext_resource type="PackedScene" uid="uid://l2h4kxgrgshb" path="res://model/Car/MainCar.glb" id="1_tw0b8"]
-[ext_resource type="Shader" path="res://Shader/Main.gdshader" id="2_liwnn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kd3di"]
-render_priority = 0
-shader = ExtResource("2_liwnn")
 
 [node name="MainCar" instance=ExtResource("1_tw0b8")]
 
-[node name="Main_001" parent="." index="5"]
-material_override = SubResource("ShaderMaterial_kd3di")
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 0.989229, 0.146377, 0, -0.146377, 0.989229, 35.3794, 3.93355, -20.9703)
+light_energy = 55.0
+light_specular = 3.0
+spot_range = 49.0
+spot_angle = 19.6875
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 0.989229, 0.146377, 0, -0.146377, 0.989229, 30.5079, 3.93355, -20.9703)
+light_energy = 55.0
+light_specular = 3.0
+spot_range = 49.0
+spot_angle = 19.6875
