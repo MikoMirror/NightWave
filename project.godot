@@ -12,8 +12,18 @@ config_version=5
 
 config/name="Runner"
 run/main_scene="res://scene/Main.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+config/features=PackedStringArray("4.2", "C#", "Mobile")
+run/max_fps=60
 config/icon="res://icon.svg"
+
+[debug]
+
+settings/stdout/print_fps=true
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 
 [dotnet]
 
@@ -22,3 +32,5 @@ project/assembly_name="Runner"
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_3d=1

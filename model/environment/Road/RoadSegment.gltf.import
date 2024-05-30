@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjtvuknwdowwv"
-path="res://.godot/imported/Road.glb-7c4f38aff32d69602ff96058f45cd4a1.scn"
+uid="uid://c1bdghlshyg3l"
+path="res://.godot/imported/RoadSegment.gltf-443aa48640dc930b87c60f3590f288e7.scn"
 
 [deps]
 
-source_file="res://model/environment/Road/Road.glb"
-dest_files=["res://.godot/imported/Road.glb-7c4f38aff32d69602ff96058f45cd4a1.scn"]
+source_file="res://model/environment/Road/RoadSegment.gltf"
+dest_files=["res://.godot/imported/RoadSegment.gltf-443aa48640dc930b87c60f3590f288e7.scn"]
 
 [params]
 
@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "Glass": {
 "use_external/enabled": true,
-"use_external/path": "res://model/environment/Road/Glass.tres"
+"use_external/path": "res://model/environment/Road/Materials/Glass.tres"
 }
 }
 }

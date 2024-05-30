@@ -2,20 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfq3f3jyrdot"
-path.s3tc="res://.godot/imported/Road_FullHD3.png-ece6984b00fac600b66e66e3430cdff5.s3tc.ctex"
+uid="uid://b4lvfc3girian"
+path.s3tc="res://.godot/imported/FullHD3.png-cae7e7c97f3a42d68ff1a7201fe295db.s3tc.ctex"
+path.etc2="res://.godot/imported/FullHD3.png-cae7e7c97f3a42d68ff1a7201fe295db.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "b40ba6f93c577a764d418fa48da76d85"
 }
 
 [deps]
 
-source_file="res://model/environment/Road/Road_FullHD3.png"
-dest_files=["res://.godot/imported/Road_FullHD3.png-ece6984b00fac600b66e66e3430cdff5.s3tc.ctex"]
+source_file="res://model/environment/Road/FullHD3.png"
+dest_files=["res://.godot/imported/FullHD3.png-cae7e7c97f3a42d68ff1a7201fe295db.s3tc.ctex", "res://.godot/imported/FullHD3.png-cae7e7c97f3a42d68ff1a7201fe295db.etc2.ctex"]
 
 [params]
 

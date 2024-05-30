@@ -1,9 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://brlj8b7re2mvl"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://07l8av1w504j"]
 
 [resource]
 resource_name = "Glass"
 transparency = 1
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0, 0, 0.894118)
+albedo_color = Color(0, 0, 0, 0.678431)
 roughness = 0.5
