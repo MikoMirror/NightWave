@@ -1,70 +1,65 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 using System.Runtime;
 
 public partial class RoadManager : Node3D
 {
 	[Export]
-	public PackedScene RoadSegmentScene; 
-
+	public PackedScene RoadSegmentScene;
 	[Export]
-	public float SegmentLength = 119f;  
-
+	public float SegmentLength = 119f;
 	[Export]
-	public float CameraSpeed = 100f;
-
-	[Export]
-	public int SegmentsAhead = 5;
-
+	public int SegmentsAhead = 10;
 	[Export]
 	public int SegmentsBehind = 2;
 
-	[Export]
-	public float CameraFarClip = 500f;
-
-	private Camera3D _camera;
 	private LinkedList<Node3D> _roadSegments = new LinkedList<Node3D>();
 	private Vector3 _lastSegmentPosition;
 	private Queue<Node3D> _segmentPool = new Queue<Node3D>();
+	private VehicleBody3D _carNode;
+	private Camera3D _camera;
+	private float _timeSinceLastCarPositionUpdate = 0f;
 
 	public override void _Ready()
 	{
 		GCSettings.LatencyMode = GCLatencyMode.LowLatency;
-		_camera = GetNode<Camera3D>("Camera3D");
-		_camera.Far = CameraFarClip;
 		_lastSegmentPosition = Vector3.Zero;
-		RoadSegmentScene = GD.Load<PackedScene>("res://scene/RoadSegment.tscn");
-		
+
+		RoadSegmentScene = GD.Load<PackedScene>("res://scene/RoadSegment.tscn"); 
+		var carScene = GD.Load<PackedScene>("res://scene/MainCar.tscn"); 
+		_carNode = carScene.Instantiate<VehicleBody3D>();
+		AddChild(_carNode);
+
+		_camera = _carNode.GetNode<Camera3D>("Camera3D");
+
+		_carNode.GlobalPosition = _lastSegmentPosition + new Vector3(0, 15, 0); 
+
 		for (int i = 0; i < SegmentsAhead; i++)
 		{
 			GenerateRoadSegment();
 		}
 	}
 
-	public override void _Process(double delta)
+	 public override void _Process(double delta)
 	{
-		_camera.GlobalPosition += new Vector3(CameraSpeed * (float)delta, 0, 0);
-
 		GenerateRoadSegmentsIfNeeded();
 		RemoveOffscreenSegments();
-		if (_camera.GlobalPosition.X % (SegmentsAhead * SegmentLength) < 0.01f)
+		_timeSinceLastCarPositionUpdate += (float)delta;
+		if (_timeSinceLastCarPositionUpdate >= 1.0f)
 		{
-			GC.Collect();
+			GD.Print("Car Position:", _carNode.GlobalPosition); 
+			_timeSinceLastCarPositionUpdate = 0f; 
 		}
 	}
-
+	
 	private void GenerateRoadSegmentsIfNeeded()
 	{
-		float cameraPositionX = _camera.GlobalPosition.X;
+		float carPositionX = _carNode.GlobalPosition.X;
 		float segmentsAheadDistance = SegmentsAhead * SegmentLength;
 
-		if (_lastSegmentPosition.X < cameraPositionX + segmentsAheadDistance)
+		while (_lastSegmentPosition.X < carPositionX + segmentsAheadDistance)
 		{
-			while (_lastSegmentPosition.X < cameraPositionX + segmentsAheadDistance)
-			{
-				GenerateRoadSegment();
-			}
+			GenerateRoadSegment();
 		}
 	}
 
