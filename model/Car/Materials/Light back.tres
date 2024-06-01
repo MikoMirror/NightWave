@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5c2fnkob17fa"]
+
+[resource]
+resource_name = "Light back"
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 0.185684, 0.223896, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.553319, 0.0312157, 0, 1)
+emission_energy_multiplier = 0.0

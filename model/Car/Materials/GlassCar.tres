@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ducdklasj1fw8"]
+
+[resource]
+resource_name = "GlassCar"
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0.0568857, 0.293652, 0.666659, 1)
+roughness = 0.5

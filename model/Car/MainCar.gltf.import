@@ -1,0 +1,61 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://d1aboq1aodvix"
+path="res://.godot/imported/MainCar.gltf-2b4eac76f0c5f78bd2a95ea3fcf118ad.scn"
+
+[deps]
+
+source_file="res://model/Car/MainCar.gltf"
+dest_files=["res://.godot/imported/MainCar.gltf-2b4eac76f0c5f78bd2a95ea3fcf118ad.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"GlassCar": {
+"use_external/enabled": true,
+"use_external/path": "res://model/Car/Materials/GlassCar.tres"
+},
+"Light back": {
+"use_external/enabled": true,
+"use_external/path": "res://model/Car/Materials/Light back.tres"
+},
+"Main": {
+"use_external/enabled": true,
+"use_external/path": "res://model/Car/Materials/Main.tres"
+},
+"Number": {
+"use_external/enabled": true,
+"use_external/path": "res://model/Car/Materials/Number.tres"
+},
+"SideLight": {
+"use_external/enabled": true,
+"use_external/path": "res://model/Car/Materials/SideLight.tres"
+},
+"light front": {
+"use_external/enabled": true,
+"use_external/path": "res://model/Car/Materials/light front.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
