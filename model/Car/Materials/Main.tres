@@ -3,6 +3,6 @@
 [resource]
 resource_name = "Main"
 cull_mode = 2
-albedo_color = Color(0.262481, 0.233555, 0.631658, 1)
+albedo_color = Color(0.588876, 0, 0.103334, 1)
 metallic = 0.826772
 roughness = 0.5
